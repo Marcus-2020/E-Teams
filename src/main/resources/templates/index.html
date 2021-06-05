@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Teams - Home</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <!--Brand-->
+    <a class="navbar-brand" href="#">E-Teams</a>
+    <!--Links-->
+    <ul class="navbar-nav">
+        <li class="navbar-item active">
+            <a class="nav-link" href="#" th:href="@{/index}">Home</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+
+    <!--Page Header-->
+    <br/>
+    <div class="col-sm-4" style="margin-left:8px">
+        <h1 class="display-4">E-Teams</h1>
+        <h4>Soccer Team Randomizer - <b>Home</b></h4>
+    </div>
+    <br/>
+
+    <!--Tables-->
+    <div class="row">
+
+        <!--Players Table-->
+        <div class="col-sm-4" style="margin-left:15px">
+            <h6>Players</h6>
+            <table id="players_table" class="table table-striped table-hover table-light">
+                <thead class="table-dark">
+                <th>Player's Full Name</th>
+                <th>Player's Function</th>
+                </thead>
+                <tr th:each="player : ${allPlayers}">
+                    <td th:text="${player.fullName}"></td>
+                    <td th:text="${player.function}"></td>
+                </tr>
+            </table>
+
+            <!--New Player Link-->
+            <br/><b><a href="#" th:href="@{/new-player}">New Player</a></b>
+
+        </div>
+
+        <!--Teams Table-->
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4" style="margin-left:15px">
+            <h6>Teams</h6>
+            <table id="teams_table" class="table table-striped table-hover table-light">
+                <thead class="table-dark">
+                <th>Team's Name</th>
+                </thead>
+                <tr th:each="team : ${allTeams}">
+                    <td th:text="${team.name}"></td>
+                </tr>
+            </table>
+
+            <!--New Team Link-->
+            <br/><b><a href="#" th:href="@{/new-team}">New Team</a></b>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

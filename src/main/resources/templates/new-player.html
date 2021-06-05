@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>E-Times - New Player</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <!--Brand-->
+  <a class="navbar-brand" href="#">E-Teams</a>
+  <!--Links-->
+  <ul class="navbar-nav">
+    <li class="navbar-item active">
+      <a class="nav-link" href="#" th:href="@{/index}">Home</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container-fluid">
+
+  <!--Page Header-->
+  <br/>
+  <div class="col-sm-4" style="margin-left:8px">
+      <h1 class="display-4">E-Teams</h1>
+      <h4>Soccer Team Randomizer - <b>New Player</b></h4>
+  </div>
+
+  <!--New Player Register Form-->
+  <div class="col-sm-6" style="margin-left:15px">
+    <form th:action="@{/player-creation-success}" th:object="${player}" method="post">
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" th:field="*{name}"
+               th:placeholder="Name">
+        <span th:if="${#fields.hasErrors('name')}"
+              th:errors="*{name}" style="color:red">Name Error</span>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input id="lastName" name="lastName" type="text" th:field="*{lastName}"
+               th:placeholder="LastName">
+        <span th:if="${#fields.hasErrors('lastName')}"
+              th:errors="*{lastName}" style="color:red">Last Name Error</span>
+      </div>
+
+      <div class="form-group">
+        <label for="function">Function</label>
+        <select id="function" name="function" th:field="*{function}">
+          <option th:value="Attacker" th:text="Attacker"></option>
+          <option th:value="Defender" th:text="Defender"></option>
+          <option th:value="Midfield" th:text="Midfield"></option>
+          <option th:value="Goalkeeper" th:text="Goalkeeper"></option>
+        </select>
+        <span th:if="${#fields.hasErrors('function')}"
+              th:errors="*{function}" style="color:red">Function Error</span>
+      </div>
+
+      <button class="btn btn-success" type="submit">Create New Player</button>
+    </form>
+  </div>
+
+</div>
+
+</body>
+</html>

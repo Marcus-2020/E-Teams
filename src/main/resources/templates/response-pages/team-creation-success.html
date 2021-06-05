@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Times - Team Successfully Created</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <!--Brand-->
+    <a class="navbar-brand" href="#">E-Teams</a>
+    <!--Links-->
+    <ul class="navbar-nav">
+        <li class="navbar-item active">
+            <a class="nav-link" href="#" th:href="@{/index}">Home</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+
+    <!--Page Header-->
+    <br/>
+    <div class="row">
+        <div class="col-sm-8" style="margin-left:8px">
+            <h1 class="display-4">E-Teams</h1>
+            <h4>Soccer Team Randomizer</h4>
+            <h2><b style="color:#00b359">Team Successfully Created</b></h2>
+        </div>
+    </div><br/>
+
+    <div class="row">
+        <div class="col-sm-4" style="margin-left:15px">
+            <table class="table">
+                <tr>
+                    <td><b>Team's Name:</b></td>
+                    <td th:text="${team.name}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-sm-6" style="margin-left:15px">
+        <a href="#" th:href="@{/index}"><b>Return to Home </b></a>
+        |
+        <a href="#" th:href="@{/new-team}"><b> Create One More</b></a>
+    </div>
+
+</div>
+
+</body>
+</html>
