@@ -1,7 +1,7 @@
-package com.marstechnologiesbr.etimes.controller;
+package com.marstechnologiesbr.eteams.controller;
 
-import com.marstechnologiesbr.etimes.model.Team;
-import com.marstechnologiesbr.etimes.repository.TeamRepository;
+import com.marstechnologiesbr.eteams.model.Team;
+import com.marstechnologiesbr.eteams.repository.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;

@@ -1,13 +1,12 @@
-package com.marstechnologiesbr.etimes.controller;
+package com.marstechnologiesbr.eteams.controller;
 
-import com.marstechnologiesbr.etimes.model.Player;
-import com.marstechnologiesbr.etimes.repository.PlayerRepository;
+import com.marstechnologiesbr.eteams.model.Player;
+import com.marstechnologiesbr.eteams.repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 

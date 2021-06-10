@@ -1,7 +1,6 @@
-package com.marstechnologiesbr.etimes.repository;
+package com.marstechnologiesbr.eteams.repository;
 
-import com.marstechnologiesbr.etimes.model.Player;
-import com.marstechnologiesbr.etimes.model.Team;
+import com.marstechnologiesbr.eteams.model.Team;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.marstechnologiesbr.etimes;
+package com.marstechnologiesbr.eteams;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

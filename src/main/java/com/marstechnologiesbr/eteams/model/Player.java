@@ -1,4 +1,4 @@
-package com.marstechnologiesbr.etimes.model;
+package com.marstechnologiesbr.eteams.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -29,6 +29,10 @@ public class Player {
     @NotBlank(message = "The player's function can't be blank.")
     @Column(name = "player_function")
     private String function;
+
+    @ManyToOne
+    @JoinColumn(name = "team_id", referencedColumnName = "id_team")
+    private Team team;
 
     public Player(String name, String lastName, String function) {
         this.setName(name);
@@ -83,5 +87,13 @@ public class Player {
         if (this.name != null) {
             this.fullName = this.name + " " + this.lastName;
         }
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
     }
 }
